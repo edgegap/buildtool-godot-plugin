@@ -182,7 +182,10 @@ func _reload_editor_export_from_disk() -> void:
 	_reload_via_tree_notification()
 
 ## Godot 4.4+: adding/removing a platform sets should_reload_presets, which
-## clears the in-memory presets and reloads them from disk on the next frame.
+## clears the in-memory presets and reloads them from disk on the next process.
+## The placeholder must be removed before EditorExport processes: it implements
+## no virtual methods, so being asked for its name logs a "_get_name must be
+## overridden" error.
 func _reload_via_temp_platform() -> bool:
 	if not ClassDB.class_exists("EditorExportPlatformExtension"):
 		return false
@@ -196,7 +199,6 @@ func _reload_via_temp_platform() -> bool:
 		return false
 
 	plugin.add_export_platform(temp)
-	_notify_editor_export_process()
 	plugin.remove_export_platform(temp)
 	_notify_editor_export_process()
 	_stop_editor_export_save_timer()
