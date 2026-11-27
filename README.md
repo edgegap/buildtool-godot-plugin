@@ -21,7 +21,7 @@ Video tutorial is coming soon, stay tuned for updates!
 ## Other sources
 
 The only other official distribution channels for this plugin are:
-- [The official Godot Asset Store plugin.](https://store.godotengine.org/asset/edgegap/edgegap-servers-quickstart)
+- [The official Godot Asset Store plugin.](https://store.godotengine.org/asset/edgegap-godot/dedicated-game-server-hosting-for-godot/)
 
 ## Next Steps
 
